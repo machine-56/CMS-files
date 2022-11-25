@@ -1,0 +1,9 @@
+.mgt{
+    margin-top: 20%;
+    color: #fff;
+}
+.main{
+    background-image: url(../../../assets/bg-2.jpg);
+    background-size: cover;
+    height: 100vh;
+}   

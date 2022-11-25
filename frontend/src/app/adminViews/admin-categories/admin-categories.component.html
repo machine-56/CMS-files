@@ -1,0 +1,93 @@
+<app-admin-nav></app-admin-nav>
+<div class="row">
+  <div class="col"> </div>
+  <div class="col-9">
+    <div class="mt-5">
+        <h3>Blog Categories</h3>
+    </div>
+    <div class="mt-4">
+        <div class="card m-auto">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Category</th>
+                            <th scope="col" style="text-align: right;">
+                                <i class="fa-solid fa-plus icon_plus"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="right" 
+                                title="Add Categories"
+
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#collapseExample" 
+                                aria-expanded="false" 
+                                aria-controls="collapseExample"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <div class="collapse" id="collapseExample">
+                        <form [formGroup]="newlog" class="d-flex">
+                            <input class="card card-body inp" name="category" formControlName="category">
+                            <button class="btn btn-outline-success"
+                            (click)="addcategory(newlog.value)"
+                            [disabled]="newlog.invalid"
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#collapseExample" 
+                                aria-expanded="false" 
+                                aria-controls="collapseExample">Add</button>
+                        </form>
+                    </div>
+                    <br>
+                    <div class="collapse" id="editExample">
+                        <form [formGroup]="newcategory" class="d-flex">
+                            <input class="card card-body inp" name="newcat" formControlName="newcat">
+                            <button class="btn btn-outline-success"
+                            (click)="catchnew(newcategory.value)"
+                            [disabled]="newcategory.invalid"
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#editExample" 
+                                aria-expanded="false" 
+                                aria-controls="editExample">Edit</button>
+                        </form>
+                      </div>
+                    <tbody>
+                        <tr *ngFor="let log of logs">
+                            <td data-label="">{{log.category}}</td>
+                            <td id="li2" style="text-align:right;" data-label="">
+                                <i class="icon_edit text-cl-1 ed-icon fa-solid fa-pen"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="right" 
+                                title="Edit"
+                                
+                                data-bs-toggle="collapse" 
+                                data-bs-target="#editExample" 
+                                aria-expanded="false" 
+                                aria-controls="editExample"
+                                (click)="catchid(log)"></i>
+
+                                <i class="icon_edit text-danger ed-icon fa-solid fa-trash"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="right" 
+                                title="Remove"
+                                (click)="fnDelete(log)"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="adder">
+        <i class=" btn btn-dark fa-solid fa-plus icon_plus"
+        data-bs-toggle="tooltip" 
+        data-bs-placement="right" 
+        title="Add Categories"
+ 
+        data-bs-toggle="collapse" 
+        data-bs-target="#collapseExample" 
+        aria-expanded="false" 
+        aria-controls="collapseExample"></i>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>

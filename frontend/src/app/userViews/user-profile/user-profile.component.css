@@ -1,0 +1,27 @@
+*{
+    max-width: 100%;
+}
+.main{
+    margin-top: 1%;
+    margin-left: 10px;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}
+.mrr{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    align-self: flex-end;
+}
+.mtr{
+    margin-right: 10px;
+}
+.i-body{
+    text-align: justify;
+}
+.newlines {
+    white-space: pre-line;
+}

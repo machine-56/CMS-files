@@ -1,0 +1,56 @@
+*{
+    max-width: 100%;
+}
+
+.m-v{
+    max-width: 100%;
+}
+.mtr{
+    margin-right: 10px;
+}
+.i-body{
+    text-align: justify;
+}
+.newlines {
+    white-space: pre-line;
+}
+.al-r{
+    text-align: right;
+}
+.bcont{
+    margin-top: 5%;
+}
+.icon {
+    margin-left: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #222;
+}
+
+@media (max-width: 768px) {
+    .fil{
+        position: absolute;
+        top: 40px;
+        left: 10px;
+        margin-bottom: 25px;
+    }
+    small{
+        top: 20px;
+        margin-bottom: 25px;
+    }
+    select{
+        position:initial;
+        width: 80%;
+    }
+    button{
+        position: absolute;
+        top:24px;
+        right: 25px;
+    }
+    .bcont{
+        margin-top: 30%;
+    }
+}

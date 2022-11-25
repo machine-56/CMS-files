@@ -1,0 +1,44 @@
+<div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-8">
+          <form class="mgt" [formGroup]="signup" (ngSubmit)="onSubmit(signup.value)" method="post">
+            <div class="mb-4">
+              <h2>Register</h2>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input type="name" class="form-control" id="name" name="fname" formControlName="fname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                  <label for="email" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" formControlName="email">
+                </div>
+                <div class="col mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="pwd" name="pwd" formControlName="pwd">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mb-3">
+                  <label for="uname" class="form-label">User Name</label>
+                  <input type="uname" class="form-control" id="uname" name="uname" formControlName="uname">
+                </div>
+                <div class="col mb-4">
+                  <label for="Phone number" class="form-label">Phone number</label>
+                  <input type="Phone number" class="form-control" id="phno" maxlength="10" name="phno" formControlName="phno">
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <button style="width: 100%;" [disabled]="!signup.valid" class="btn btn-success">Sign up</button>
+            </div>
+          </form>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </div>

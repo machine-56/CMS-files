@@ -1,0 +1,37 @@
+<app-user-nav></app-user-nav>
+<div class="">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-9">
+      <form [formGroup]="blog" >
+        <!-- Title -->
+        <div class=" mt-2">
+          <h4>Title</h4>
+          <input class="bdthin hed" name="title" formControlName="title" maxlength="50">
+        </div>
+        <!-- category selector -->
+        <div class="mt-4">
+          <h5>Category</h5>
+          <select class="form-select hed" aria-label="Default select example" name="category" formControlName="category">
+            <option *ngFor="let list of categories" value="{{list.category}}">{{list.category}}</option>
+          </select>
+        </div>
+        <!-- content -->
+        <h5 class="mt-5">Write</h5>
+        <div class="text-center">
+          <textarea class="mt-2 blog" name="body" formControlName="body"></textarea>
+          <button class="mt-2 btn btn-outline-dark" (click)="onDraft(blog.value)">Draft</button>
+          <button class="mt-2 btn btn-outline-dark" [disabled]="blog.invalid" (click)="onPost(blog.value)">Post</button>
+        </div>
+      </form>
+    </div>
+    <div class="col mt-2">
+      <!-- <div class="p-r">
+        <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.mgt{
+    margin-top: 25%;
+}
+.main{
+    background-image: url(../../../assets/bg-3.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.align-btm{
+    position: fixed;
+    left: 10px;
+    bottom: 5px;
+}
+a{
+    color: #222222;
+    text-decoration: none;
+}
+.bg-w{
+    padding: 0px 2px;
+    background-color: #ffffff;
+    width: max-content;
+}

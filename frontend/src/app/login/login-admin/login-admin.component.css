@@ -1,0 +1,18 @@
+.mgt{
+    margin-top: 25%;
+    color: #fff;
+}
+.main{
+    background-image: url(../../../assets/bg-4.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+.align-btm{
+    position: fixed;
+    left: 10px;
+    bottom: 5px;
+}
+a{
+    color: #ff7700;
+    text-decoration: none;
+}

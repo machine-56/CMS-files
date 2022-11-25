@@ -1,0 +1,15 @@
+a{
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    transition: top ease 0.5s;
+}
+
+a:hover{
+    /* top: -1px; */
+    color: #aaa;
+}
+
+i{
+    margin-right: 4px;
+}

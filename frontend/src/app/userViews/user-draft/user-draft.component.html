@@ -1,0 +1,32 @@
+<app-user-nav></app-user-nav>
+<div class="row m-v">
+    <div class="col-1"></div>
+    <div class="col-9">
+        <!-- blog content -->
+        <div class="mt-3 mb-3">
+            <h2>Drafts</h2>
+        </div>
+        <div class="bcont" *ngFor="let draft of drafts" [hidden]="drafts==''||null">
+            <!-- title -->
+            <div class="d-flex">
+                <h3><b>{{draft.title}}</b></h3>
+                <i class="fa-solid fa-pencil icon" (click)="edit(draft)"></i>
+                <i class="fa-solid fa-trash icon text-danger" (click)="remove(draft)"></i>
+              </div>
+            <!-- author date etc -->
+            <div class="details mb-3"><i>
+                <small class="mtr">Author: {{draft.author}},</small>
+                <small class="mtr">Category: {{draft.category}},</small>
+                <small class="mtr">Posted on: {{draft.date|date}}</small></i>
+            </div>
+            <!-- blog body -->
+            <div class="i-body mb-5 newlines">
+              {{draft.body}}
+            </div>
+        </div>
+    </div>
+    <div class="no_draft text-center mt-5" [hidden]="drafts!=''||null">
+        <p><i>You have nothing in draft</i></p>
+    </div>
+    <div class="col"></div>
+</div>

@@ -1,0 +1,30 @@
+<app-user-nav></app-user-nav>
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="edit">
+        <form>
+            <!-- Title -->
+            <div class=" mt-2">
+              <h4>Title</h4>
+              <input class="card  hed" name="title" id="title" pattern="'[\\w\\-\\/]+'" minlength="1" maxlength="50" [(ngModel)]="draft.title">
+            </div>
+            <!-- category selector -->
+            <div class="mt-4">
+              <h5>Category</h5>
+              <select class="form-select hed" aria-label="Default select example" name="category" id="category" [(ngModel)]="draft.category">
+                <option *ngFor="let list of categories" value="{{list.category}}">{{list.category}}</option>
+              </select>
+            </div>
+            <!-- content -->
+            <h5 class="mt-5">Write</h5>
+            <div class="text-center">
+              <textarea class="mt-2 blog" name="body" id="body" [(ngModel)]="draft.body"></textarea>
+              <button class="mt-2 btn btn-outline-dark" [disabled]="draft.title==' '||''||null" (click)="onDraft(draft)" >draft</button>
+              <button class="mt-2 btn btn-outline-dark" (click)="post(draft)" >Post</button>
+            </div>
+        </form>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>

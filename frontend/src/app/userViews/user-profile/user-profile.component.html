@@ -1,0 +1,54 @@
+<app-user-nav></app-user-nav>
+<div class="main">
+    <h3>Hi {{user}}</h3>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-9">
+            <!-- personal quote -->
+            <!-- <div class="card mb-4 mt-3">
+                <div class="card-header">
+                    Quote
+                    <i class="fa-solid fa-pencil mrr"></i>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>A well-known quote, contained in a blockquote element.</p>
+                        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                    </blockquote>
+                </div>
+            </div> -->
+            <!-- card -->
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    Featured
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><a routerLink="/user/userpost">Post</a></li>
+                    <li class="list-group-item"><a routerLink="/user/userdraft">Draft</a></li>
+                </ul>
+            </div>
+            <!-- Recent post -->
+            <h5 class="mt-3">Recent Posts</h5>
+            <div class="recent_post mt-4" *ngFor="let blog of blogs" [hidden]="blogs==''||null">
+                <!-- title -->
+                <div>
+                  <h4><b>{{blog.title}}</b></h4>
+                </div>
+                <!-- author date etc -->
+                <div class="details mb-3"><i>
+                    <small class="mtr">Author: {{blog.author}},</small>
+                    <small class="mtr">Category: {{blog.category}},</small>
+                    <small class="mtr">Posted on: {{blog.date|date}}</small></i>
+                </div>
+                <!-- blog body -->
+                <div class="i-body mb-5 newlines">
+                  {{blog.body}}
+                </div>
+            </div>
+            <div class="no_post mb-5" [hidden]="blogs!=''||null">
+                <i>You haven't posted anything. <a routerLink="/user/newblog">Start posting</a></i>
+            </div>
+        </div>
+        <div class="col"></div>
+      </div>
+</div>

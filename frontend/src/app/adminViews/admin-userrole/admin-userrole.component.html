@@ -1,0 +1,32 @@
+<app-admin-nav></app-admin-nav>
+<div class="container">
+    <div class="head mt-5">
+        <h3>Users</h3>
+    </div>
+    <div class="row mt-4">
+        <div class="card col-11 m-auto">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">User Name</th>
+                            <th scope="col">Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of users">
+                            <td data-label="Name : ">{{ user.fname }}</td>
+                            <td data-label="User Name : ">{{ user.uname }}</td>
+                            <td data-label="Role : ">
+                                <button [class.admin]="user.role=='admin'" class="btn" data-bs-toggle="tooltip" data-bs-placement="right" title="Admin" (click)="configusrad(user)"><i class="fa-solid fa-user-tie"></i></button>
+                                <button [class.user]="user.role=='user'" class="btn" data-bs-toggle="tooltip" data-bs-placement="right" title="User" (click)="configusrur(user)"><i class="fa-solid fa-user"></i></button>
+                            </td>
+                            <!-- <td data-label="Role : ">{{ user.role }}</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

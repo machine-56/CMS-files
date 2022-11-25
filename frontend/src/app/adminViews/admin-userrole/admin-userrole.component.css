@@ -1,0 +1,74 @@
+/* heading */
+
+
+/* button */
+button{
+    margin-right: 10px;
+}
+.admin{
+    color:white;
+    background-color: green;
+}
+.user{
+    color:white;
+    background-color: green;
+}
+
+/* table responsive */
+
+.table-container{
+    padding: 0 10%;
+    margin: 40px auto 0;
+  }
+  
+  .table{
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table thead tr th{
+    font-size: 14px;
+    font-weight: medium;
+    letter-spacing: 0.35px;
+    color: #000;
+    opacity: 1;
+    padding: 12px;
+    vertical-align: top;
+    text-align: center;
+  }
+  
+  table tbody tr td{
+    font-size: 14px;
+    letter-spacing: 0.35;
+    font-weight: normal;
+    color: #000;
+    padding: 8px;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .table thead{
+      display: none;
+    }
+    .table, .table tbody, .table tr, .table td{
+      display:block;
+      width: 100%;
+    }
+    .table tr{
+      margin-bottom: 15px;
+    }
+    .table tbody tr td{
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+    }
+    .table td::before{
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      width: 50%;
+      padding-left: 15px;
+      text-align: left;
+      font-weight: 410;
+  
+    }
+  }

@@ -1,0 +1,32 @@
+<app-admin-nav></app-admin-nav>
+<div class="row m-v">
+  <div class="col-1"></div>
+  <div class="col-9">
+      <!-- blog content -->
+      <div class="mt-3 mb-3">
+        <h2>Posts</h2>
+      </div>
+      <div class="bcont" *ngFor="let blog of blogs">
+          <!-- title -->
+          <div class="d-flex">
+            <h3><b>{{blog.title}}</b></h3>
+            <i class="fa-solid fa-pencil icon" (click)="edit(blog)"></i>
+            <i class="fa-solid fa-trash icon text-danger" (click)="remove(blog)"></i>
+          </div>
+          <!-- author date etc -->
+          <div class="details mb-3"><i>
+              <small class="mtr">Author: {{blog.author}},</small>
+              <small class="mtr">Category: {{blog.category}},</small>
+              <small class="mtr">Posted on: {{blog.date|date}}</small></i>
+          </div>
+          <!-- blog body -->
+          <div class="i-body mb-5 newlines">
+            {{blog.body}}
+          </div>
+      </div>
+      <div class="no_post mb-5" [hidden]="blogs!=''||null">
+        <i>You haven't posted anything. <a routerLink="/admin/newblog">Start posting</a></i>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>

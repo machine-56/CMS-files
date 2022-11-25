@@ -1,0 +1,37 @@
+<div class="">
+  <app-admin-nav></app-admin-nav>
+  <div class="row m-v">
+    <div class="col-1"></div>
+    <div class="col-9">
+      <!-- blog content -->
+      <div class="bcont" *ngFor="let blog of blogs">
+        <!-- title -->
+        <div>
+          <h3><b>{{blog.title}}</b></h3>
+        </div>
+        <!-- thumbnail -->
+        <div class="img"></div>
+        <!-- author date etc -->
+        <div class="details mb-3"><i>
+            <small class="mtr">Author: {{blog.author}},</small>
+            <small class="mtr">Category: {{blog.category}},</small>
+            <small class="mtr">Posted on: {{blog.date|date}}</small></i>
+        </div>
+        <!-- blog body -->
+        <div class="i-body mb-5 newlines">
+          {{blog.body}}
+        </div>
+      </div>
+    </div>
+    <div class="col fil">
+      <form [formGroup]="filter" class="al-r mt-3">
+        <small><i>Filter result: </i></small>
+        <select class="form-select" aria-label="Default select example" name="val" formControlName="val">
+          <option value="all">All</option>
+          <option *ngFor="let list of filter_lists" value="{{list.category}}">{{list.category}}</option>
+        </select>
+        <button class=" mt-3 btn btn-outline-dark" (click)="filterBlog(filter.value)">OK</button>
+      </form>
+    </div>
+  </div>
+</div>
